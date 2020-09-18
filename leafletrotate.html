@@ -25,7 +25,7 @@
 	 map.on('click', function (e) {
 
 
-        DrawAll(e.latlng.lat, e.latlng.lng, 6000)
+        DrawAll(e.latlng.lat, e.latlng.lng, 6000, 32) ;  // 32 degrees, 60000 radius of 6KM in meters
 
     });
 	
@@ -61,8 +61,7 @@
             var position = marker.getLatLng();
             ExpressLayers.clearLayers();
 
-            DrawAll(position.lat, position.lng, 16000);
-
+               DrawAll(position.lat, position.lng, 6000, 32) ;  // 32 degrees, 60000 radius of 6KM in meters
             marker.setLatLng(new L.LatLng(position.lat, position.lng), { draggable: 'true' });
             ExpressLayers.addLayer(marker);
 			
